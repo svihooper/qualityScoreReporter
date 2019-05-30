@@ -19,13 +19,13 @@
 var googleapisLib = require('@sv/googleapisLib');
 
 (async function main() {
-	const sheetId = '1TopHa7dalN3Iaolz8VgtD2nkc468LcKJSSfMENk37yg';
+	const sheetId = 'INSERT YOUR SHEET ID HERE';
 
 	// Use test config below OR use clientConfig.json qualityScoreFactors
 	const useTestConfig = true;
 	const testConfigQualityScoreFactors = {
 		'hasYelp'        : { 'weight' : { 'value' : 10  } },
-		"yelpScore"      : { "weight" : { "value" : 25  } },
+		'yelpScore'      : { 'weight' : { 'value' : 25  } },
 		'hasTripAdvisor' : { 'weight' : { 'value' : 10  } },
 		'hasDescription' : { 'weight' : { 'value' : 15  } },
 		'hasPhone'       : { 'weight' : { 'value' : 2   } },
@@ -42,8 +42,8 @@ var googleapisLib = require('@sv/googleapisLib');
 	await formatSheet(sheetId, sheetTitle).catch(errorFn);
 
 	let config = (useTestConfig)
-               ? testConfigQualityScoreFactors
-               : site.plugins.listings._def.settings.qualityScoreFactors;
+			   ? testConfigQualityScoreFactors
+			   : site.plugins.listings._def.settings.qualityScoreFactors;
 
 	let listingMeta = await getListingMeta().catch(errorFn);
 	let catStrings = listingMeta[0].listingcats.filter(c => c.active).map(c => `site_primary_catid_${c.catid}`);
@@ -156,7 +156,7 @@ function calculateQualityScores(listings, meta, config) {
 			hasYelp             : qualityData.calculated.hasYelp.value,
 			hasYelpScore        : qualityData.calculated.hasYelp.score,
 			hasTripAdvisor      : qualityData.calculated.hasTripAdvisor.value,
-			hasTripAdvisorScore	: qualityData.calculated.hasTripAdvisor.score,
+			hasTripAdvisorScore : qualityData.calculated.hasTripAdvisor.score,
 			hasDescription      : qualityData.calculated.hasDescription.value,
 			hasDescriptionScore : qualityData.calculated.hasDescription.score,
 			hasPhone            : qualityData.calculated.hasPhone.value,
