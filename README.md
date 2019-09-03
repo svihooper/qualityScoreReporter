@@ -4,7 +4,7 @@ Used to generate a quick report of quality score totals for listings.
 ## Example output
 https://www.screencast.com/t/2VJk98h1rf0v
 
-##### Instructions:
+### Instructions:
 1. Create new blank google spreadsheet (https://docs.google.com/spreadsheets)
 2. Copy the unique ID from the URL once the sheet has been created, it looks something like this "15D3nPJZLTAHLQhXo4MSTw4WV3rYbwXlSfX8cTONWD6I"
 3. Take the script: https://github.com/sv-jschwarz/qualityScoreReporter/blob/master/qualityScoreReporter.js and find the phrase "INSERT YOUR SHEET ID HERE", replace that text with your sheetid.
@@ -15,3 +15,6 @@ https://www.screencast.com/t/2VJk98h1rf0v
 7. Run the qualityScoreReporter.js script in your repl (make sure you updated your sheet id).
 8. Switch back to your Google sheet page and view your results.
 9. Share that sheet with whoever needs to view the results.
+
+#### QualityScore Factors:
+The script comes with default qualityScore factors for testing. If you wish to use the real factors from the client's clientConfig.json make sure to set `const useTestConfig = true;` to `const useTestConfig = false;`.
