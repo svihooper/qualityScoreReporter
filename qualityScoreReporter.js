@@ -13,7 +13,7 @@
 var googleapisLib = require('@sv/googleapisLib');
 
 (async function main() {
-	const sheetId = '1hmutdZMfVUcfpOMDxHzwFAyRW5xPaWym1fkGpaM5FFs';
+	const sheetId = 'INSERT YOUR SHEET ID HERE';
 
 	// Use test config below OR use clientConfig.json qualityScoreFactors
 	const useTestConfig = true;
