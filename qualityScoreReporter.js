@@ -13,7 +13,7 @@
 var googleapisLib = require('@sv/googleapisLib');
 
 (async function main() {
-	const sheetId = 'INSERT YOUR SHEET ID HERE';
+	const sheetId = '1hmutdZMfVUcfpOMDxHzwFAyRW5xPaWym1fkGpaM5FFs';
 
 	// Use test config below OR use clientConfig.json qualityScoreFactors
 	const useTestConfig = true;
@@ -142,8 +142,11 @@ function calculateQualityScores(listings, meta, config) {
 		const qualityData = site.plugins.listings.calculateQualityScore({ item: listing, meta: meta }, config);
 
 		scoredList.push({
+			AccountID           : listing.acctid,
 			ListingID           : listing.recid,
 			Company             : listing.company,
+			Category            : listing.primary_category.catname,
+			Subcategory         : listing.primary_category.subcatname,
 			RankName            : listing.rankname || '-- N/A --',
 			RankOrder           : listing.rankorder,
 			QualityScore        : qualityData.score,
